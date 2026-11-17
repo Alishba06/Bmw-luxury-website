@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 248, 250, 252;
+  --background-start-rgb: 2, 4, 10;
+  --background-end-rgb: 6, 12, 30;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #02040a;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #02040a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(8, 15, 35, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-subtle {
+  background: rgba(6, 12, 30, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 12px 45px rgba(0, 240, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* Neon Pulse Animation */
+@keyframes neonBorderPulse {
+  0% {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.15);
+  }
+  50% {
+    border-color: rgba(139, 92, 246, 0.45);
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.25);
+  }
+  100% {
+    border-color: rgba(0, 240, 255, 0.35);
+    box-shadow: 0 0 22px rgba(0, 240, 255, 0.3);
+  }
+}
+
+.neon-border-pulse {
+  animation: neonBorderPulse 4s ease-in-out infinite alternate;
+}
+
+/* Scanline Effect */
+.scanline {
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 240, 255, 0.03) 51%);
+  background-size: 100% 4px;
+}
+
+/* Grille Glow */
+@keyframes grillePulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px #00f0ff) drop-shadow(0 0 28px #0066ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 22px #00f0ff) drop-shadow(0 0 45px #8b5cf6);
+  }
+}
+
+.animate-grille {
+  animation: grillePulse 3.5s infinite ease-in-out;
+}
